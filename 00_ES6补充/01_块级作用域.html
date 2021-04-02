@@ -31,10 +31,18 @@
 
 	//3.没有块级作用域引起的问题：for的块级
 	//为什么闭包可以解决问题：函数是一个作用域
-	var btns = document.getElementsByTagName('button');
-	for(var i = 0; i < btns.length; i++) {
+	// var btns = document.getElementsByTagName('button');
+	// for(var i = 0; i < btns.length; i++) {
+	// 	(function (num) {
+	// 		btns[i].addEventListener('click', function () {
+	// 		console.log('第' + num +'个按钮被点击');
+	// 	})
+	// })(i)
+	// }
+	const btns = document.getElementsByTagName('button');
+	for(let i = 0; i < btns.length; i++) {
 		btns[i].addEventListener('click', function () {
-			console.log('第' + i +'个按钮被点击')；
+			console.log('第' + (i + 1) +'个按钮被点击')
 		})
 	}
 </script>
