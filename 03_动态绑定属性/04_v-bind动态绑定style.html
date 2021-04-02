@@ -6,7 +6,7 @@
 </head>
 <body>
 <div id="app">
-	<h2 :style="{fontSize: textSize}">{{message}}</h2>
+	<h2 :style="getStyles()">{{message}}</h2>
 </div>
 
 <script src="../vue.js"></script>
@@ -15,8 +15,14 @@
     el: '#app',
     data: {
       message: '你好啊',
-			textSize: '50px'
-    }
+			textSize: '50',
+			finalColor: 'red'
+    },
+		methods: {
+    	getStyles: function () {
+    		return {fontSize: this.textSize + 'px', color: this.finalColor}
+			}
+		}
   })
 </script>
 </body>
