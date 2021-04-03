@@ -7,8 +7,17 @@
 <body>
 <div id="app">
 	<div @click="divClick">
-		<button @click="btnClick">按钮</button>
+<!--	.stop修饰符的使用	-->
+		<button @click.stop="btnClick">按钮</button>
 	</div>
+<!-- .prevent修饰符的使用	-->
+	<form action="baidu">
+		<input type="submit" value="提交" @click.prevent="submitClick">
+	</form>
+<!-- 监听某个键帽	-->
+	<input type="text" @keyup.enter="keyUP">
+<!-- .once修饰符的使用	-->
+	<button @click="btn2Click">按钮2</button>
 </div>
 
 <script src="../vue.js"></script>
@@ -24,6 +33,15 @@
 			},
 			divClick () {
 				console.log('divClick');
+			},
+			submitClick () {
+				console.log('submitClick')
+			},
+			keyUP () {
+				console.log('kenUP');
+			},
+			btn2Click () {
+				console.log('btn2Click')
 			}
 		}
   })
