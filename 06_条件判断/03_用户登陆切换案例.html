@@ -8,11 +8,11 @@
 <div id="app">
 	<span v-if="isUser">
 		<label for="userName"></label>
-		<input type="text" id="userName" placeholder="用户账号">
+		<input type="text" id="userName" placeholder="用户账号" key="userName">
 	</span>
 	<span v-else>
 		<label for="userEmail"></label>
-		<input type="text" id="userEmail" placeholder="用户邮箱">
+		<input type="text" id="userEmail" placeholder="用户邮箱" key="userEmail">
 	</span>
 	<button @click="isUser = !isUser">切换登陆</button>
 </div>
