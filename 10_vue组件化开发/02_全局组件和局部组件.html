@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<div id="app">
+  {{message}}
+</div>
+
+<script src="../vue.js"></script>
+<script>
+	//1.创建组建构造器
+	const cpnC = Vue.extend({
+		template: `
+		`
+	})
+	//2.注册组建（全局组件,可以在多个Vue的实例下面使用）
+	Vue.component('cpn', cpnC);
+
+
+  const app = new Vue({
+    el: '#app',
+    data: {
+      message: '你好啊'
+    },
+		//局部组件注册
+		components: {
+    	cpn: cpnC,
+		}
+  })
+</script>
+</body>
+</html>

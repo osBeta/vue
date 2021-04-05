@@ -7,8 +7,12 @@
 <body>
 <div id="app">
 <!-- 1.修饰符 lazy	-->
-	<input type="text" v-model="message">
+	<input type="text" v-model.lazy="message">
 	<h2>{{message}}</h2>
+
+<!-- 2.修饰符 number	-->
+	<input type="number" v-model.number="age">
+	<h2>您输入的名字{{age}}</h2>
 </div>
 
 <script src="../vue.js"></script>
@@ -16,9 +20,12 @@
   const app = new Vue({
     el: '#app',
     data: {
-      message: '你好啊'
+      message: '你好啊',
+			age: 0,
+			name: ''
     }  
   })
+
 </script>
 </body>
 </html>
